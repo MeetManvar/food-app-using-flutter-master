@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "166685272410",
+    "project_id": "charusat-food-app",
+    "storage_bucket": "charusat-food-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166685272410:android:fa2360ad8c5493ce8d2b63",
+        "android_client_info": {
+          "package_name": "com.example.charusat_food"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166685272410-vs6ph454s1bon1k714ak5aqd6m1il6li.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.charusat_food",
+            "certificate_hash": "184b5e6ed8edd485ce0bd18af47b9894fc4f43b0"
+          }
+        },
+        {
+          "client_id": "166685272410-kqijgbfd44dpdoj997h7uvqe96kc6lg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5Ub540RIf8IBNgxLpcQ7iZ7lRr1z94CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166685272410-kqijgbfd44dpdoj997h7uvqe96kc6lg0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166685272410:android:da1139dc85b34ba58d2b63",
+        "android_client_info": {
+          "package_name": "com.example.charusat_food_for_business"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166685272410-kqijgbfd44dpdoj997h7uvqe96kc6lg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5Ub540RIf8IBNgxLpcQ7iZ7lRr1z94CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166685272410-kqijgbfd44dpdoj997h7uvqe96kc6lg0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
