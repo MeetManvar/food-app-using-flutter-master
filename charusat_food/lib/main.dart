@@ -51,6 +51,7 @@ class MyApp extends StatelessWidget {
         MainScreen.id: (context) => MainScreen(),
         SellerHomeScreen.id: (context) => SellerHomeScreen(),
         ProductListScreen.id: (context) => ProductListScreen(),
+        UpdateProfile.id: (context) => UpdateProfile(),
       },
     );
   }
