@@ -21,17 +21,35 @@ class ProductCard extends StatelessWidget {
               const EdgeInsets.only(top: 8.0, bottom: 8, left: 10, right: 10),
           child: Row(
             children: [
-              Material(
-                elevation: 5,
-                borderRadius: BorderRadius.circular(10),
-                child: SizedBox(
-                  height: 120,
-                  width: MediaQuery.of(context).size.width - 290,
-                  child: Container(
-                    child: Image.network(document.data()['productImage']),
+              Stack(
+                children: [
+                  Material(
+                    elevation: 5,
+                    borderRadius: BorderRadius.circular(10),
+                    child: SizedBox(
+                      height: 120,
+                      width: MediaQuery.of(context).size.width - 290,
+                      child: Container(
+                        child: Image.network(document.data()['productImage']),
+                      ),
+                    ),
                   ),
+                  Container(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10)
+                    )
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10,right: 10,top: 3,bottom: 3),
+                  child: Text('$offer% OFF',style: TextStyle(color: Colors.white,fontSize: 12),),
                 ),
               ),
+                ],
+              ),
+              
               Padding(
                 padding: const EdgeInsets.only(left: 8, top: 20),
                 child: Column(

@@ -25,7 +25,13 @@ class ProductListScreen extends StatelessWidget{
               ),
             ];
           },
-          body: ProductListWidget(),
+          body: ListView(
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            children: [
+              ProductListWidget(),
+            ],
+          ),
     ),
     );
   }
