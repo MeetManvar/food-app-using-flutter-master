@@ -2,6 +2,7 @@ import 'package:charusat_food/providers/location_provider.dart';
 import 'package:charusat_food/screens/home_screen.dart';
 import 'package:charusat_food/screens/landing_screen.dart';
 import 'package:charusat_food/screens/main_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class AuthProvider with ChangeNotifier {
   double longitude;
   String address;
   String location;
+  DocumentSnapshot snapshot;
 
   Future<void> verifyPhone({
     BuildContext context,
@@ -198,5 +200,16 @@ class AuthProvider with ChangeNotifier {
       print('Error $e');
       return false;
     }
+  }
+
+  //Avinash Updated
+  Future<DocumentSnapshot> getUserDetails() async {
+    DocumentSnapshot result = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(_auth.currentUser.uid)
+        .get();
+    this.snapshot = result;
+    notifyListeners();
+    return result;
   }
 }
