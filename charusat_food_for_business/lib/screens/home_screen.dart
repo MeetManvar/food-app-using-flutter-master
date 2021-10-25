@@ -24,8 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //backgroundColor: Colors.green,
       body: SliderMenuContainer(
-          appBarColor: Colors.white,
+          appBarColor: Colors.green,
           appBarHeight: 80,
           key: _key,
           sliderMenuOpenSize: 250,
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           trailing: Row(
             children: [
-              IconButton(icon: Icon(Icons.search), onPressed: () {}),
+              //IconButton(icon: Icon(Icons.search), onPressed: () {}),
               IconButton(icon: Icon(CupertinoIcons.bell), onPressed: () {})
             ],
           ),

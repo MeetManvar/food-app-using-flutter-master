@@ -107,12 +107,12 @@ class _AddNewProductState extends State<AddNewProduct> {
                                           brand: _brandTextController.text,
                                           collection: dropDownValue,
                                           description: description,
-                                          lowstockQty: int.parse(
-                                              _lowStockTextController.text),
+                                          //lowstockQty: int.parse(
+                                              //_lowStockTextController.text),
                                           price: price,
                                           sku: sku,
-                                          stockQty: int.parse(
-                                              _stockTextController.text),
+                                          //stockQty: int.parse(
+                                              //_stockTextController.text),
                                           tax: tax,
                                           weight: weight,
                                           productName: productName);
