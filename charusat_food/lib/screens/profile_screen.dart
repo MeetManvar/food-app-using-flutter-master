@@ -24,10 +24,10 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        centerTitle: true,
+        //centerTitle: true,
         iconTheme: IconThemeData(color: Colors.white),
         title: Text(
-          "Grocery Store",
+          "Food App",
           style: TextStyle(color: Colors.white),
         ),
         // leading: IconButton(onPressed: (){
@@ -48,11 +48,16 @@ class ProfileScreen extends StatelessWidget {
             children: [
               Container(
                 child: Padding(
-                  padding: const EdgeInsets.all(0.0),
+                  padding: const EdgeInsets.only(top: 12,bottom: 12),
                   child: Text(
-                    "My Account ",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+                        'My Account',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          shadows: <Shadow>[
+                            Shadow(offset: Offset(2.0,2.0),blurRadius: 3.0,color: Colors.grey)
+                          ],
+                            color: Colors.black,fontWeight: FontWeight.bold, fontSize: 28),
+                      ),
                 ),
               ),
               Stack(
@@ -60,7 +65,7 @@ class ProfileScreen extends StatelessWidget {
                   Container(
                     color: Colors.redAccent,
                     child: Padding(
-                      padding: const EdgeInsets.all(0.0),
+                      padding: const EdgeInsets.only(top: 10,left: 10),
                       child: Column(
                         children: [
                           Row(
@@ -69,7 +74,7 @@ class ProfileScreen extends StatelessWidget {
                                 radius: 40,
                                 backgroundColor: Theme.of(context).primaryColor,
                                 child: Text(
-                                  'J',
+                                  'A',
                                   style: TextStyle(
                                       fontSize: 50, color: Colors.white),
                                 ),
