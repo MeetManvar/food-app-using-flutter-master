@@ -19,9 +19,11 @@ class StoreProvider with ChangeNotifier {
   String distance = '';
   String selectedProductCategory;
 
-  getSelectedStore(storeDetails, distance) {
-    this.distance = distance;
-    this.storeDetails = storeDetails;
+  getSelectedStore(selectedStore, selectedStoreId) {
+//     this.distance = distance;
+//     this.storeDetails = storeDetails;
+     this.selectedStore = selectedStore;
+    this.selectedStoreId = selectedStoreId; //Changed By Avi
     notifyListeners();
   }
   selectedCategory(category) {
