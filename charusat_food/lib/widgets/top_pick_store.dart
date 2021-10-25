@@ -101,8 +101,10 @@ class TopPicksStore extends StatelessWidget {
                               10) {
                             return InkWell(
                               onTap: () {
-                                _storeData.getSelectedStore(document,
-                                    getDistance(document['location']));
+                                _storeData.getSelectedStore(document['shopName'],
+                                    document['uid']);//AVI"S CODE
+//                                 _storeData.getSelectedStore(document,
+//                                     getDistance(document['location'])); MEET"S CODE
                                 pushNewScreenWithRouteSettings(
                                   context,
                                   settings:
