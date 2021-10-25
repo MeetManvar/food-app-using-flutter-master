@@ -25,6 +25,7 @@ class StoreProvider with ChangeNotifier {
     this.storeDetails = storeDetails;
     notifyListeners();
   }
+  
   selectedCategory(category) {
     this.selectedProductCategory = category;
     notifyListeners();
