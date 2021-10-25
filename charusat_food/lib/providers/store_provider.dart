@@ -19,6 +19,7 @@ class StoreProvider with ChangeNotifier {
   String distance = '';
   String selectedProductCategory;
 
+  //meet manvar
   getSelectedStore(storeDetails, distance) {
     this.distance = distance;
     this.storeDetails = storeDetails;

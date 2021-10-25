@@ -18,7 +18,7 @@ class SellerHomeScreen extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             children: [
-              //SellerBanner(),
+              SellerBanner(),
               SellerCategories(),
               //FeaturedProducts(),
             ],
