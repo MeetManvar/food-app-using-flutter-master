@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           Image.asset('images/chef.png'),
           Text(
-            'Charusat Food',
+            'Foodie',
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
           )
         ],

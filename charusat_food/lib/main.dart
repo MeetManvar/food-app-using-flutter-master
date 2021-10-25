@@ -6,6 +6,7 @@ import 'package:charusat_food/screens/landing_screen.dart';
 import 'package:charusat_food/screens/login_screen.dart';
 import 'package:charusat_food/screens/main_screen.dart';
 import 'package:charusat_food/screens/map_screen.dart';
+import 'package:charusat_food/screens/product_details_screen.dart';
 import 'package:charusat_food/screens/profile_update_screen.dart';
 import 'package:charusat_food/screens/seller_home_screen.dart';
 import 'package:charusat_food/screens/splash_screen.dart';
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
         SellerHomeScreen.id: (context) => SellerHomeScreen(),
         // ignore: equal_keys_in_map
         ProductListScreen.id: (context) => ProductListScreen(),
+        ProductDetailScreen.id: (context) => ProductDetailScreen(),
         UpdateProfile.id: (context) => UpdateProfile(),
       },
     );
