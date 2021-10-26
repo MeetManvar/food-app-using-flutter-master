@@ -150,7 +150,7 @@ class _LogInPageState extends State<LogInPage> {
                                 children: [
                                   Image.asset('images/chef.png'),
                                   Text(
-                                    'CHARUSAT Food Admin',
+                                    'FoodApp for Admin',
                                     style: TextStyle(
                                         fontWeight: FontWeight.w900,
                                         fontSize: 20),

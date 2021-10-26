@@ -1,3 +1,4 @@
+import 'package:charusat_food/widgets/products/bottom_sheet_container.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,32 +17,7 @@ class ProductDetailScreen extends StatelessWidget {
           IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.search))
         ],
       ),
-      bottomSheet: Container(
-        child: Row(
-          children: [
-            Expanded(
-                child: Container(
-              height: 56,
-              color: Colors.grey[800],
-              child: Center(
-                  child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('Back to Main Page'),
-              )),
-            )),
-            Expanded(
-                child: Container(
-              height: 56,
-              color: Colors.red[800],
-              child: Center(
-                  child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('Save for later'),
-              )),
-            ))
-          ],
-        ),
-      ),
+      bottomSheet: BottomSheetContainer(document),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(

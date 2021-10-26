@@ -32,8 +32,8 @@ class MainScreen extends StatelessWidget {
           inactiveColor: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.square_favorites),
-          title: ("Favourites"),
+          icon: Icon(CupertinoIcons.cart),
+          title: ("Cart"),
           activeColor: Theme.of(context).primaryColor,
           inactiveColor: CupertinoColors.systemGrey,
         ),

@@ -20,7 +20,6 @@ class SellerHomeScreen extends StatelessWidget {
             children: [
               SellerBanner(),
               SellerCategories(),
-              //FeaturedProducts(),
             ],
           )),
     );

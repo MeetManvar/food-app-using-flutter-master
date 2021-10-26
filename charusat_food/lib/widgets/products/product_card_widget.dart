@@ -1,9 +1,10 @@
 import 'package:charusat_food/screens/product_details_screen.dart';
+import 'package:charusat_food/screens/product_details_screen.dart';
+import 'package:charusat_food/widgets/cart/counter.dart';
 //import 'package:charusat_food/screens/products_details_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:charusat_food/screens/product_details_screen.dart';
 
 class ProductCard extends StatelessWidget {
   final DocumentSnapshot document;
@@ -35,11 +36,11 @@ class ProductCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: InkWell(
                       onTap: () {
-                        //print(document.data()['productId']);
+                        // print(document.data()['productID']);
                         pushNewScreenWithRouteSettings(context,
                             settings:
                                 RouteSettings(name: ProductDetailScreen.id),
-                            screen: ProductDetailScreen(document: document,),
+                            screen: ProductDetailScreen(document: document),
                             withNavBar: false,
                             pageTransitionAnimation:
                                 PageTransitionAnimation.cupertino);
@@ -127,24 +128,9 @@ class ProductCard extends StatelessWidget {
                         Container(
                           width: MediaQuery.of(context).size.width - 160,
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Card(
-                                color: Theme.of(context).primaryColor,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 30, right: 30, top: 7, bottom: 7),
-                                  child: Text(
-                                    'Add',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [CounterForCard(document)]),
+                        )
                       ],
                     )
                   ],
