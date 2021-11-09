@@ -78,7 +78,9 @@ class _CounterForCardState extends State<CounterForCard> {
                       setState(() {
                         _qty--;
                       });
-                      _cart.updateCartQty(_docId, _qty).then((value) {
+                      var total = _qty * widget.document.data()['price'];
+
+                      _cart.updateCartQty(_docId, _qty, total).then((value) {
                         setState(() {
                           _updating = false;
                         });
@@ -105,7 +107,7 @@ class _CounterForCardState extends State<CounterForCard> {
                               padding: const EdgeInsets.all(8.0),
                               child: CircularProgressIndicator(),
                             )
-                          : Text(_qty.toString())),
+                          : Text(_qty.toString(),style: TextStyle(color: Colors.white),)),
                 ),
                 InkWell(
                   onTap: () {
@@ -113,7 +115,9 @@ class _CounterForCardState extends State<CounterForCard> {
                       _updating = true;
                       _qty++;
                     });
-                    _cart.updateCartQty(_docId, _qty).then((value) {
+                    var total = _qty * widget.document.data()['price'];
+
+                    _cart.updateCartQty(_docId, _qty, total).then((value) {
                       setState() {
                         _updating = false;
                       }
@@ -134,7 +138,7 @@ class _CounterForCardState extends State<CounterForCard> {
           )
         : InkWell(
             onTap: () {
-              EasyLoading.show(status: 'Adding to Catt');
+              EasyLoading.show(status: 'Adding to Cart');
               _cart.addToCart(widget.document).then((value) {
                 setState(() {
                   _exists = true;

@@ -4,9 +4,10 @@ class StoreServices {
   CollectionReference sellerBanner =
       FirebaseFirestore.instance.collection('shopkeeperbanner');
 
+  CollectionReference shopkeepers = FirebaseFirestore.instance.collection('shopkeepers');
+
   getTopPickedStores() {
-    return FirebaseFirestore.instance
-        .collection('shopkeepers')
+    return shopkeepers
         .where('isAccVerified', isEqualTo: true)
         .where('isTopPicked', isEqualTo: true)
         .where('isShopOpen', isEqualTo: true)
@@ -15,19 +16,23 @@ class StoreServices {
   }
 
   getAllStores() {
-    return FirebaseFirestore.instance
-        .collection('shopkeepers')
+    return shopkeepers
         .where('isAccVerified', isEqualTo: true)
+        //.orderBy('shopName')
         // .where('isShopOpen', isEqualTo: true)
-        // .orderBy('shopName')
         .snapshots();
   }
 
   getAllStoresQuery() {
-    return FirebaseFirestore.instance
-        .collection('shopkeepers')
+    return shopkeepers
         .where('isAccVerified', isEqualTo: true);
+        //.orderBy('shopName');
     // .where('isShopOpen', isEqualTo: true);
     // .orderBy('shopName')
+  }
+
+  Future<DocumentSnapshot>getShopDetails(sellerUid)async{
+    DocumentSnapshot snapshot = await shopkeepers.doc(sellerUid).get();
+    return snapshot;
   }
 }

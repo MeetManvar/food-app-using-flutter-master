@@ -2,6 +2,7 @@ import 'package:charusat_food/screens/favourite_screen.dart';
 import 'package:charusat_food/screens/home_screen.dart';
 import 'package:charusat_food/screens/my_orders_screen.dart';
 import 'package:charusat_food/screens/profile_screen.dart';
+import 'package:charusat_food/widgets/cart/cart_notification.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
@@ -53,6 +54,11 @@ class MainScreen extends StatelessWidget {
     }
 
     return Scaffold(
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 50),
+        child: CartNotification(),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,//CART NOTIFICATION
       body: PersistentTabView(
         context,
         navBarHeight: 56,

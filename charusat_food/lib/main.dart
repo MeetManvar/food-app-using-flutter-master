@@ -1,6 +1,8 @@
 import 'package:charusat_food/providers/auth_provider.dart';
+import 'package:charusat_food/providers/cart_provider.dart';
 import 'package:charusat_food/providers/location_provider.dart';
 import 'package:charusat_food/providers/store_provider.dart';
+import 'package:charusat_food/screens/cart_screen.dart';
 import 'package:charusat_food/screens/home_screen.dart';
 import 'package:charusat_food/screens/landing_screen.dart';
 import 'package:charusat_food/screens/login_screen.dart';
@@ -30,6 +32,9 @@ void main() async {
       ),
       ChangeNotifierProvider(
         create: (_) => StoreProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (_) => CartProvider(),
       )
     ],
     child: MyApp(),
@@ -56,6 +61,7 @@ class MyApp extends StatelessWidget {
         ProductListScreen.id: (context) => ProductListScreen(),
         ProductDetailScreen.id: (context) => ProductDetailScreen(),
         UpdateProfile.id: (context) => UpdateProfile(),
+        CartScreen.id: (context)=> CartScreen(), 
       },
     );
   }

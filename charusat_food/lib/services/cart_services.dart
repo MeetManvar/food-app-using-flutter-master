@@ -10,20 +10,23 @@ class CartServices{
     cart.doc(user.uid).set({
       'user' : user.uid,
       'sellerUid' : document.data()['seller']['sellerUid'],
+      'shopName' : document.data()['seller']['shopName']
     });
 
     return cart.doc(user.uid).collection('products').add({
       'productId' : document.data()['productId'],
       'productName' : document.data()['productName'],
+      'productImage' : document.data()['productImage'],
       'weight' : document.data()['weight'],
       'price' : document.data()['price'],
       'comparedPrice' : document.data()['comparedPrice'],
       'sku' : document.data()['sku'],
       'qty' : 1,
+      'total' : document.data()['price']
     });
   }
 
-  Future<void>updateCartQty(docId,qty)async{
+  Future<void>updateCartQty(docId,qty,total)async{
     // Create a reference to the document the transaction will use
 DocumentReference documentReference = FirebaseFirestore.instance
   .collection('cart')
@@ -38,7 +41,7 @@ return FirebaseFirestore.instance.runTransaction((transaction) async {
   }
 
   // Perform an update on the document
-  transaction.update(documentReference, {'qty': qty});
+  transaction.update(documentReference, {'qty': qty,'total':total});
 
   
   return qty;
@@ -56,5 +59,10 @@ return FirebaseFirestore.instance.runTransaction((transaction) async {
      if(snapshot.docs.length==0){
        cart.doc(user.uid).delete();
      }
+  }
+
+  Future<DocumentSnapshot>getShopName()async{
+    DocumentSnapshot doc = await cart.doc(user.uid).get();
+    return doc;
   }
 }
