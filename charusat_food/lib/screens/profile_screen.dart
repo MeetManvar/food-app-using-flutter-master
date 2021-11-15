@@ -67,20 +67,21 @@ class ProfileScreen extends StatelessWidget {
                           padding: EdgeInsets.only(left: 20),
                           child: Column(
                             children: [
-                              
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
                                 children: [
-                                  SizedBox(width: 15,),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       SizedBox(
-                                          height: 10,
-                                        ),
+                                        height: 10,
+                                      ),
                                       Text(
                                         userdetails.snapshot
                                                     .data()['firstName'] !=
@@ -99,14 +100,15 @@ class ProfileScreen extends StatelessWidget {
                                           height: 10,
                                         ),
                                       Text(
-                                          "${userdetails.snapshot.data()['email']}",
-                                          style: TextStyle(
+                                        "${userdetails.snapshot.data()['email']}",
+                                        style: TextStyle(
                                             fontSize: 16,
                                             //fontWeight: FontWeight.bold,
-                                            color: textColor),),
-                                            SizedBox(
-                                          height: 10,
-                                        ),
+                                            color: textColor),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
                                       Text(
                                         user.phoneNumber,
                                         style: TextStyle(
@@ -186,15 +188,30 @@ class ProfileScreen extends StatelessWidget {
                       ],
                     ),
                     Divider(),
-                    ListTile(leading: Icon(Icons.shop_outlined), title: Text("My Orders")),
                     ListTile(
-                       leading: Icon(Icons.location_on_outlined),
+                        leading: Icon(Icons.shop_outlined),
+                        title: Text("My Orders")),
+                    ListTile(
+                        leading: Icon(Icons.location_on_outlined),
                         title: Text("My Rattings & Reviews")),
                     ListTile(
-                        leading: Icon(Icons.person_outline), title: Text("Notifications")),
-                    
+                        leading: Icon(Icons.person_outline),
+                        title: Text("Notifications")),
                     ListTile(
-                         leading: Icon(Icons.exit_to_app_outlined), title: Text("LogOut")),
+                        onTap: () {
+                          FirebaseAuth.instance.signOut();
+
+                          pushNewScreenWithRouteSettings(
+                            context,
+                            settings: RouteSettings(name: WelcomeScreen.id),
+                            screen: WelcomeScreen(),
+                            withNavBar: false,
+                            pageTransitionAnimation:
+                                PageTransitionAnimation.cupertino,
+                          );
+                        },
+                        leading: Icon(Icons.exit_to_app_outlined),
+                        title: Text("LogOut")),
                   ],
                 ),
               )
@@ -207,7 +224,7 @@ class ProfileScreen extends StatelessWidget {
               backgroundColor: primaryColor,
               child: CircleAvatar(
                   backgroundImage: NetworkImage(
-                        "https://firebasestorage.googleapis.com/v0/b/charusat-food-app.appspot.com/o/bannerImage%2Flogo.png?alt=media&token=37e60bde-0c98-4710-923f-47087680b89f",
+                    "https://firebasestorage.googleapis.com/v0/b/charusat-food-app.appspot.com/o/bannerImage%2Flogo.png?alt=media&token=37e60bde-0c98-4710-923f-47087680b89f",
                   ),
                   radius: 45,
                   backgroundColor: Colors.white),
